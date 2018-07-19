@@ -1,0 +1,27 @@
+// Grid
+
+.container {
+  margin-left: em(60px);
+  margin-right: em(60px);
+}
+
+.grid {
+  &__col {
+    @include grid-style;
+
+    @include mq(medium) {
+  }
+}
+    // Create Grid
+
+    @for $i from 1 to $g-col-count {
+
+      $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
+      $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+      // Create grid column modifiers
+      .grid__col--#{$i} {
+        width: percentage($target / $context);
+      }
+    }
+}

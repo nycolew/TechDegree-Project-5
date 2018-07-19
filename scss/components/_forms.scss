@@ -1,0 +1,23 @@
+// Forms
+
+.form {
+  @include e(input) {
+    background-color: $white;
+    border-top: none;
+    border-left: none;
+    border-right: none;
+    border-bottom: 5px $turquoise solid;
+    font-family: $font-family--secondary;
+    color: palette(grey, xx-light);
+    font-size: em(16px);
+    width: 100%;
+    padding: em(15px);
+    margin-bottom: em(50px);
+  }
+
+  @include e(label) {
+    @include m(hidden) {
+      @extend .srt;
+    }
+  }
+}

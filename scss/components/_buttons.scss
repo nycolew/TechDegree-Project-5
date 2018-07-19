@@ -1,0 +1,8 @@
+// Buttons
+
+.btn {
+  @include button-style {
+    @extend %btn;
+    margin-bottom: em(20px);
+  }
+}

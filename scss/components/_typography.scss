@@ -1,0 +1,38 @@
+// Typography
+
+// Headlines
+
+.headline {
+  &--primary {
+    @extend %hdln-prim;
+  }
+
+  &--secondary {
+    @extend %hdln-sec;
+    margin-top: em(50px);
+    margin-bottom: em(50px);
+  }
+}
+
+// Links
+
+.link {
+  text-decoration: none;
+  color: $bright-turquoise;
+  font-weight: $font-weight--bold;
+}
+
+// Block quotes
+
+.blockquote {
+  font-size: em(30px);
+  border-left: 7px $turquoise solid;
+  border-radius: $br-default;
+  font-weight: $font-weight--light;
+  color: palette(grey, light);
+  line-height: 1.2;
+  font-family: $font-family--primary;
+  font-style: italic;
+  padding-left: em(15px);
+  padding-right: em(15px);
+}

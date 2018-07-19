@@ -1,0 +1,25 @@
+// Navigation
+
+.nav {
+  margin-bottom: em(100px);
+
+  @include e(item) {
+    text-align: center;
+    margin: em(20px) 0;
+
+    a {
+      font-family: $font-family--primary;
+      font-size: em(22px);
+      font-weight: $font-weight--light;
+      color: palette(black, light);
+      text-decoration: none;
+      padding: em(8px) em(78px);
+
+      &:hover {
+        background-color: $turquoise;
+        border-radius: $br-default;
+        color: $white;
+      }
+    }
+  }
+}

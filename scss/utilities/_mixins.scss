@@ -1,0 +1,78 @@
+// Media Queries
+
+@mixin mq($break) {
+  @if $break == "small" {
+    @media(min-width: $brkpoint-sm) {
+      @content;
+    }
+  }
+
+  @else if $break == "medium" {
+    @media(min-width: $brkpoint-md + 1) {
+      @content;
+    }
+  }
+
+  @else if $break == "large" {
+    @media(min-width: $brkpoint-lg) {
+      @content;
+    }
+  }
+
+  @else {
+    @error "No value could be retrieved for '#{$break}'."
+  }
+};
+
+//Import Google Font
+
+@if variable-exists(font-url--google) {
+  @import url($font-url--google);
+}
+
+//Flexbox
+
+@mixin flexbox {
+  display: flex;
+  @content;
+};
+
+//BEM
+
+@mixin e($element) {
+  &__#{$element} {
+    @content;
+  }
+};
+
+@mixin m($modifier) {
+  &--#{$modifier} {
+    @content;
+  }
+};
+
+//Grid Styling
+
+@mixin grid-style {
+  @each $theme, $color in $theme-colors {
+    &--#{$theme}.theme_colors {
+      background: $color;
+      border-radius: $br-default;
+      padding: 10px;
+      font-size: $base__font-size;
+      font-weight: $font-weight--bold;
+      color: palette(grey, light);
+    }
+  }
+}
+
+// Button Styling
+
+@mixin button-style {
+  @each $theme, $color in $button-colors {
+    &--#{$theme} {
+      background-color: $color;
+      @content;
+    }
+  }
+}

@@ -1,0 +1,23 @@
+// Images
+
+.img {
+  @include m(logo) {
+    @extend %centered;
+    padding-top: em(75px);
+    padding-bottom: em(75px);
+  }
+
+  @include m(avatar) {
+    @extend %centered;
+    padding-top: em(35px);
+    padding-bottom: em(35px);
+  }
+
+  @include m(frame) {
+    @extend %centered;
+    margin-top: em(50px);
+    padding: em(15px);
+    border: 1px palette(grey, x-light) solid;
+    width: 98%;
+  }
+}
