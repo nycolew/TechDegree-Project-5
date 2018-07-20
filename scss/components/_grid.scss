@@ -21,7 +21,7 @@
       }
 
       &:nth-child(4) {
-        @include flexify($just: space-between, $wrap: nowrap);
+        @include flexify($just: space-around, $wrap: nowrap);
       }
     }
   }
@@ -55,6 +55,12 @@
         padding: 10px;
         font-weight: $font-weight--medium;
         margin-bottom: $marg-md;
+      }
+    }
+
+    @include mq(medium) {
+      &--6 {
+        display: inline-block;
       }
     }
 }

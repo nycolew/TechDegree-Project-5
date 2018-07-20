@@ -433,7 +433,7 @@ template {
   }
   .grid__row:nth-child(4) {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: nowrap;
   }
 }
@@ -509,6 +509,11 @@ template {
     padding: 10px;
     font-weight: 400;
     margin-bottom: 50px;
+  }
+}
+@media (min-width: 769px) {
+  .grid__col--6 {
+    display: inline-block;
   }
 }
 .grid .grid__col--1 {
@@ -628,6 +633,13 @@ template {
 .img--avatar {
   padding-top: 1.9444444444em;
   padding-bottom: 1.9444444444em;
+}
+@media (min-width: 769px) {
+  .img--avatar {
+    width: auto;
+    margin-left: 200px;
+    padding-top: 1em;
+  }
 }
 .img--frame {
   margin-top: 2.7777777778em;
