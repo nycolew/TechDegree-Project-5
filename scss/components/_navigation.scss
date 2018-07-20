@@ -7,6 +7,7 @@
     text-align: center;
     margin: em(20px) 0;
 
+
     a {
       font-family: $font-family--primary;
       font-size: em(22px);
@@ -14,6 +15,9 @@
       color: palette(black, light);
       text-decoration: none;
       padding: em(8px) em(78px);
+      @include mq(medium) {
+        padding: em(15px);
+      }
 
       &:hover {
         background-color: $turquoise;
@@ -21,5 +25,17 @@
         color: $white;
       }
     }
+  }
+
+  @include mq(medium) {
+    @include flexify($just: space-between);
+    padding-top: em(20px);
+  }
+}
+
+.grid__row:first-child {
+  @include mq(medium) {
+  @include flexify($just: space-between);
+  margin-top: em(20px);
   }
 }

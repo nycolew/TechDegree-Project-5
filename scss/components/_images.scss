@@ -5,6 +5,11 @@
     @extend %centered;
     padding-top: em(75px);
     padding-bottom: em(75px);
+
+    @include mq(medium) {
+      display: inline-block;
+      padding: em(20px) 0 0 0;
+    }
   }
 
   @include m(avatar) {
@@ -19,5 +24,9 @@
     padding: em(15px);
     border: 1px palette(grey, x-light) solid;
     width: 98%;
+
+    @include mq(medium) {
+      width: auto;
+    }
   }
 }

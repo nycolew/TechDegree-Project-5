@@ -5,6 +5,9 @@
 .headline {
   &--primary {
     @extend %hdln-prim;
+    @include mq(medium) {
+      margin-top: $marg-lg;
+    }
   }
 
   &--secondary {

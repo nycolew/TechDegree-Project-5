@@ -6,11 +6,57 @@
 }
 
 .grid {
+
+  &__row {
+    @include mq(medium) {
+      @include centered;
+      max-width: 90%;
+
+      &:first-child {
+        max-width: 80%;
+      }
+
+      &:nth-child(3) {
+        @include flexify($just: space-between);
+      }
+
+      &:nth-child(4) {
+        @include flexify($just: space-between, $wrap: nowrap);
+      }
+    }
+  }
+
   &__col {
     @include grid-style;
+    @include mq(small) {
+      &--8.theme__colors,
+      &--7.theme__colors,
+      &--6.theme__colors,
+      &--5.theme__colors,
+      &--4.theme__colors,
+      &--3.theme__colors {
+        font-family: $font-family--primary;
+        color: $grey;
+        font-size: em(18px);
+        padding: 10px;
+        font-weight: $font-weight--medium;
+        margin-bottom: $marg-x-sm;
+      }
 
-    @include mq(medium) {
-  }
+
+      &--12.theme__colors,
+      &--6.theme__colors:last-of-type,
+      &--4.theme__colors:last-of-type,
+      &--3.theme__colors:last-of-type,
+      &--7.theme__colors:last-of-type {
+        font-family: $font-family--primary;
+        color: $grey;
+        font-size: em(18px);
+        padding: 10px;
+        font-weight: $font-weight--medium;
+        margin-bottom: $marg-md;
+      }
+    }
 }
     // Create Grid
 

@@ -32,10 +32,16 @@
 
 //Flexbox
 
-@mixin flexbox {
-  display: flex;
-  @content;
-};
+@mixin flexify(
+  $disp : flex,
+  $dir  : null,
+  $just : null,
+  $wrap : null) {
+    display: $disp;
+    flex-direction: $dir;
+    justify-content: $just;
+    flex-wrap: $wrap;
+  };
 
 //BEM
 
@@ -55,7 +61,7 @@
 
 @mixin grid-style {
   @each $theme, $color in $theme-colors {
-    &--#{$theme}.theme_colors {
+    &--#{$theme}.theme__colors {
       background: $color;
       border-radius: $br-default;
       padding: 10px;
@@ -75,4 +81,12 @@
       @content;
     }
   }
+}
+
+// center
+
+@mixin centered {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
 }

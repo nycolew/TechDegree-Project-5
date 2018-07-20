@@ -14,4 +14,8 @@ p {
   font-family: $font-family--primary;
   color: palette(grey, light);
   line-height: 1.5;
+
+  @include mq(large) {
+    font-size: em(22px);
+  }
 }

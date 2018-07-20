@@ -15,6 +15,10 @@
     margin-bottom: em(50px);
   }
 
+  @include mq(medium) {
+    margin-left: $marg-lg;
+  }
+
   @include e(label) {
     @include m(hidden) {
       @extend .srt;
