@@ -20,7 +20,7 @@
   }
 
   @else {
-    @error "No value could be retrieved for '#{$break}'."
+    @error "'#{$break}' is not a valid entry."
   }
 };
 

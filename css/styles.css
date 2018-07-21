@@ -431,6 +431,9 @@ template {
   margin-right: 2.7777777778em;
 }
 
+.grid__row {
+  margin: 1.6666666667em 0;
+}
 @media (min-width: 769px) {
   .grid__row {
     display: flex;
@@ -504,21 +507,12 @@ template {
   color: #999da1;
 }
 @media (min-width: 1px) {
-  .grid__col--8.theme__colors, .grid__col--7.theme__colors, .grid__col--6.theme__colors, .grid__col--5.theme__colors, .grid__col--4.theme__colors, .grid__col--3.theme__colors {
+  .grid__col--12.theme__colors, .grid__col--8.theme__colors, .grid__col--7.theme__colors, .grid__col--6.theme__colors, .grid__col--5.theme__colors, .grid__col--4.theme__colors, .grid__col--3.theme__colors {
     font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
     color: #797e83;
     font-size: 1em;
     padding: 10px;
     font-weight: 400;
-    margin-bottom: 6px;
-  }
-  .grid__col--12.theme__colors, .grid__col--6.theme__colors:last-of-type, .grid__col--4.theme__colors:last-of-type, .grid__col--3.theme__colors:last-of-type, .grid__col--7.theme__colors:last-of-type {
-    font-family: "Lato", "Helvetica Neue", Helvetica, Arial, sans-serif;
-    color: #797e83;
-    font-size: 1em;
-    padding: 10px;
-    font-weight: 400;
-    margin-bottom: 50px;
   }
 }
 @media (min-width: 1100px) {
