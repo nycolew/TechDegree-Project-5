@@ -59,6 +59,23 @@
   }
 }
 
+// Images
+
+%img-avatar {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  padding-top: em(35px);
+  padding-bottom: em(35px);
+
+  @include mq(medium) {
+    &:last-child {
+    width: auto;
+    padding-top: em(18px);
+    }
+  }
+}
+
 // Screen Reader Text
 
 .srt {

@@ -1,20 +1,16 @@
 // Grid
 
 .container {
-  margin-left: em(60px);
-  margin-right: em(60px);
+  margin-left: em(50px);
+  margin-right: em(50px);
 }
 
 .grid {
 
-  &__row {
+  @include e(row) {
     @include mq(medium) {
-      @include centered;
+      @include flexify($just: space-between);
       max-width: 90%;
-
-      &:first-child {
-        max-width: 80%;
-      }
 
       &:nth-child(3) {
         @include flexify($just: space-between);
@@ -26,7 +22,7 @@
     }
   }
 
-  &__col {
+  @include e(col) {
     @include grid-style;
     @include mq(small) {
       &--8.theme__colors,
@@ -58,22 +54,8 @@
       }
     }
 
-    @include mq(medium) {
-      &--6 {
-        display: inline-block;
-      }
+    @include mq(large)  {
+      @include g-columns;
     }
-}
-    // Create Grid
-
-    @for $i from 1 to $g-col-count {
-
-      $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
-      $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
-
-      // Create grid column modifiers
-      .grid__col--#{$i} {
-        width: percentage($target / $context);
-      }
-    }
+  }
 }

@@ -13,6 +13,12 @@
     width: 100%;
     padding: em(15px);
     margin-bottom: em(50px);
+
+    @include mq(medium) {
+      &:first-of-type {
+        margin-top: $marg-md;
+      }
+    }
   }
 
   @include mq(medium) {

@@ -18,15 +18,9 @@
 
   @include m(avatar) {
     @extend %centered;
-    padding-top: em(35px);
-    padding-bottom: em(35px);
-
-    @include mq(medium) {
-      width: auto;
-      margin-left: $marg-x-lg;
-      padding-top: em(18px);
+    @extend %img-avatar;
     }
-  }
+
 
   // Frame Image
 
@@ -39,6 +33,7 @@
 
     @include mq(medium) {
       width: auto;
+      margin: 0;
     }
   }
 }
