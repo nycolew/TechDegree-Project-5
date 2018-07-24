@@ -1,41 +1,27 @@
-// Typography
-
-// Headlines
+// ====================
+//      TYPOGRAPHY
+// ====================
 
 .headline {
-  &--primary {
+  @include m(primary) {
     @extend %hdln-prim;
-    @include mq(medium) {
-      margin-top: $marg-lg;
-    }
   }
-
-  &--secondary {
-    @extend %hdln-sec;
-    margin-top: em(50px);
-    margin-bottom: em(50px);
+  @include m(secondary) {
+    @include text($size: em(28px), $weight: $font-weight--thin, $color: palette(grey, light));
+    font-family: $font-family--primary;
+    margin-top: em(70px);
   }
 }
-
-// Links
 
 .link {
-  text-decoration: none;
-  color: $bright-turquoise;
-  font-weight: $font-weight--bold;
+  @extend %link;
 }
 
-// Block quotes
-
 .blockquote {
-  font-size: em(30px);
-  border-left: 7px $turquoise solid;
-  border-radius: $br-default;
-  font-weight: $font-weight--light;
-  color: palette(grey, light);
-  line-height: 1.2;
-  font-family: $font-family--primary;
+  @include text($size: em(28px), $weight: $font-weight--light, $l-height: 36px );
   font-style: italic;
-  padding-left: em(15px);
-  padding-right: em(15px);
+  border-left: 10px solid $color-primary;
+  border-radius: $br-default;
+  padding-left: em(20px);
+  margin: 0.8em;
 }

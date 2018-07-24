@@ -1,33 +1,20 @@
-// Forms
+// ========================
+//        FORMS
+// ========================
+
 
 .form {
-  @include e(input) {
-    background-color: $white;
-    border-top: none;
-    border-left: none;
-    border-right: none;
-    border-bottom: 5px $turquoise solid;
-    font-family: $font-family--secondary;
-    color: palette(grey, xx-light);
-    font-size: em(16px);
-    width: 100%;
-    padding: em(15px);
-    margin-bottom: em(50px);
-
-    @include mq(medium) {
-      &:first-of-type {
-        margin-top: $marg-md;
-      }
-    }
-  }
-
-  @include mq(medium) {
-    margin-left: $marg-lg;
-  }
-
   @include e(label) {
     @include m(hidden) {
       @extend .srt;
     }
+  }
+  @include e(input) {
+    border: none;
+    font-family: $font-family--secondary;
+    border-bottom: 5px solid $color-primary;
+    padding: em(45px) 0 em(15px) em(15px);
+    margin-left: 2.5%;
+    width: 95%;
   }
 }

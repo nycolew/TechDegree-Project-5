@@ -1,4 +1,24 @@
-// Media Queries
+// =========================
+//          MIXINS
+// ========================
+
+
+// Flexbox
+
+
+@mixin flexify(
+  $disp : flex,
+  $dir  : null,
+  $just : null,
+  $wrap : null) {
+    display: $disp;
+    flex-direction: $dir;
+    justify-content: $just;
+    flex-wrap: $wrap;
+  };
+
+
+  // Media Queries
 
 @mixin mq($break) {
   @if $break == "small" {
@@ -24,26 +44,7 @@
   }
 };
 
-//Import Google Font
-
-@if variable-exists(font-url--google) {
-  @import url($font-url--google);
-}
-
-//Flexbox
-
-@mixin flexify(
-  $disp : flex,
-  $dir  : null,
-  $just : null,
-  $wrap : null) {
-    display: $disp;
-    flex-direction: $dir;
-    justify-content: $just;
-    flex-wrap: $wrap;
-  };
-
-//BEM
+// BEM Selectors
 
 @mixin e($element) {
   &__#{$element} {
@@ -57,7 +58,25 @@
   }
 };
 
-//Grid Styling
+
+// Create Grid
+
+@mixin g-columns {
+  @for $i from 1 through $g-col-count {
+
+    $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
+    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
+
+    // Create grid column modifiers
+    &--#{$i} {
+      width: percentage($target / $context);
+      display: flex;
+      }
+    }
+  };
+
+
+// Grid Styling
 
 @mixin grid-style {
   @each $theme, $color in $theme-colors {
@@ -70,39 +89,14 @@
       color: palette(grey, light);
     }
   }
-}
+};
 
-// Button Styling
 
-@mixin button-style {
-  @each $theme, $color in $button-colors {
-    &--#{$theme} {
-      background-color: $color;
-      @content;
-    }
-  }
-}
+// Format Text
 
-// Center
-
-@mixin centered {
-  display: block;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-// Create Grid
-
-@mixin g-columns {
-  @for $i from 1 to $g-col-count {
-
-    $context: g-context($g-col-width, $g-col-count, $g-gutter-width) !global;
-    $target: ($g-col-width * $i) + ($g-gutter-width * ($i - 1));
-
-    // Create grid column modifiers
-    .grid__col--#{$i} {
-      width: percentage($target / $context);
-      display: flex;
-      }
-    }
-  }
+@mixin text($size: $base__font-size, $weight: null, $l-height: $base__line, $color: $color-text) {
+  font-size: $size;
+  font-weight: $weight;
+  line-height: $l-height;
+  color: $color;
+};

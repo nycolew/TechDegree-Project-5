@@ -1,8 +1,19 @@
-// Buttons
+// ============================
+//        BUTTONS
+// ============================
 
 .btn {
-  @include button-style {
-    @extend %btn;
-    margin-bottom: em(20px);
-  }
+  padding: em(10px) em(25px);
+  display: block;
+
+  @each $item , $color in $button-colors {
+    @include m(#{$item}) {
+      @extend %btn;
+      background-color: $color;
+      margin-top: $marg-sm;
+      @include mq(medium) {
+        margin-right: em(20px);
+      }
+      }
+    }
 }

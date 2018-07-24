@@ -1,20 +1,9 @@
-// Font Stacks
+// ===================================
+//          GLOBAL CONFIG
+// ===================================
 
-$font-url--google         : 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins';
 
-$font-family--primary     : 'Lato','Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family--secondary   : 'Poppins', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
-$font-family--tertiary   : 'Helvetica Neue', Helvetica, Arial, sans-serif;
-
-//Font Weights
-
-$font-weight--thin  : 100;
-$font-weight--light : 300;
-$font-weight--medium: 400;
-$font-weight--bold  : 700;
-$font-weight--ultra : 900;
-
-//Descriptive Base Colors
+// Colors
 
 $white            : #fff;
 $black            : #0b0b0b;
@@ -28,14 +17,46 @@ $coral            : #ff784f;
 $purple-majesty   : #9279c3;
 $scooter          : #39add1;
 
-//Color Usage
+// Color Usage
 
-$color-primary  : $fountain-blue;
-$color-secondary: $scooter;
-$color-accent   : $emerald;
-$color-shadow   : rgba($black, .2);
+$color-primary    : $turquoise;
+$color-secondary  : $bright-turquoise;
+$color-text       : lighten($grey, 12%);
 
-//Color Palette Modifiers
+
+// Button Colors
+
+$button-colors: (
+  default: $bright-turquoise,
+  success: $emerald,
+  error: $sunglo,
+  warning: $coral,
+  info: $purple-majesty
+);
+
+// Grid Colors
+
+$grid-bg-3      : #deb2ee; // French Lilac
+$grid-bg-4      : #7ee6fd; // Anakiwa
+$grid-bg-5      : #88d9a0; // Vista Blue
+$grid-bg-6      : #3fabca; // Shakespeare
+$grid-bg-7      : #ec9fa3; // Sea Pink
+$grid-bg-8      : #fd9f85; //  Vivid Tangerine
+$grid-bg-12     : #80e8d1; // Riptide
+
+// Theme Color Map
+
+$theme-colors: (
+  '3'       : $grid-bg-3,
+  '4'       : $grid-bg-4,
+  '5'       : $grid-bg-5,
+  '6'       : $grid-bg-6,
+  '7'       : $grid-bg-7,
+  '8'       : $grid-bg-8,
+  '12'      : $grid-bg-12
+);
+
+// Color Palette Modifiers
 
 $palettes: (
   grey: (
@@ -53,58 +74,36 @@ $palettes: (
   )
 );
 
-// Button Colors
+// Font Stacks
 
-$button-colors: (
-  default: $bright-turquoise,
-  success: $emerald,
-  error: $sunglo,
-  warning: $coral,
-  info: $purple-majesty
-);
+$font-url--google         : 'https://fonts.googleapis.com/css?family=Lato:100,300,400,700,900|Poppins';
 
-// Grid Colors
+$font-family--primary     : 'Lato','Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family--secondary   : 'Poppins', 'Lato', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+$font-family--tertiary   : 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+//Font Weights
 
-$grid-bg-3      : #deb2ee; // French Lilac
-$grid-bg-4      : #7ee6fd; // Anakiwa
-$grid-bg-5      : #88d9a0; // Vista Blue
-$grid-bg-6      : #3fabca; // Shakespeare
-$grid-bg-7      : #ec9fa3; // Sea Pink
-$grid-bg-8      : #fd9f85; //  Vivid Tangerine
-$grid-bg-12     : #80e8d1; // Riptide
+$font-weight--thin  : 100;
+$font-weight--light : 300;
+$font-weight--medium: 400;
+$font-weight--bold  : 700;
+$font-weight--ultra : 900;
 
-// Theme Colors Map
+// Text
 
-$theme-colors: (
-  '3'       : $grid-bg-3,
-  '4'       : $grid-bg-4,
-  '5'       : $grid-bg-5,
-  '6'       : $grid-bg-6,
-  '7'       : $grid-bg-7,
-  '8'       : $grid-bg-8,
-  '12'      : $grid-bg-12
-);
+$base__font-size : 18px;
+$base__line: 26px;
+$letter-space: 1px;
 
-
-//Text
-
-$base__font-size    : 18px;
-$base__line         : 24px;
-
-//Breakpoints
-
-$brkpoint-sm      : 1px;
-$brkpoint-md      : 768px;
-$brkpoint-lg      : 1100px;
+// Breakpoints
+$brkpoint-sm: 1px;
+$brkpoint-md: 768px;
+$brkpoint-lg: 1024px;
 
 // Border Radius
 
 $br-default   : .4em;
-
-// Transitions
-
-$trns-duration    : 2s;
 
 // Grid Config
 
@@ -115,8 +114,14 @@ $g-cont-max-w     : 100%;
 
 // Margins
 
-$marg-x-sm      : 6px;
-$marg-sm        : 15px;
+$marg-xx-sm     : 6px;
+$marg-x-sm      : 15px;
+$marg-sm        : 30px;
 $marg-md        : 50px;
 $marg-lg        : 100px;
 $marg-x-lg      : 200px;
+$marg-xx-lg     : 250px;
+
+// Transitions
+
+$trns-duration    : 2s;

@@ -1,39 +1,21 @@
-// Images
+// ==================
+//      IMAGES
+// ==================
 
 .img {
-  //Logo Image
-
   @include m(logo) {
     @extend %centered;
-    padding-top: em(75px);
-    padding-bottom: em(75px);
-
-    @include mq(medium) {
-      display: inline-block;
-      padding: em(20px) 0 0 0;
-    }
+    width: 100%;
+    max-width: 199px;
   }
-
-  //Avatar Image
-
-  @include m(avatar) {
-    @extend %centered;
-    @extend %img-avatar;
-    }
-
-
-  // Frame Image
-
   @include m(frame) {
     @extend %centered;
-    margin-top: em(50px);
+    width: 100%;
     padding: em(15px);
-    border: 1px palette(grey, x-light) solid;
-    width: 98%;
-
-    @include mq(medium) {
-      width: auto;
-      margin: 0;
-    }
+    border: 1px solid $color-text;
+  }
+  @include m(avatar) {
+    @extend %centered;
+    padding-top: em(35px)
   }
 }

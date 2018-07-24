@@ -1,41 +1,25 @@
-// Navigation
+// ================
+//    NAVIGATION
+// ================
+
 
 .nav {
-  margin-bottom: em(100px);
+  @include flexify($dir: column);
+  padding: 0;
+  &__item {
+    display: block;
+    padding: em(8px);
+    @extend %nav;
 
-  @include e(item) {
-    text-align: center;
-    margin: em(20px) 0;
+    @include mq(medium) {
+      margin-right: em(20px);
+    }
 
-
-    a {
-      font-family: $font-family--primary;
-      font-size: em(22px);
-      font-weight: $font-weight--light;
-      color: palette(black, light);
-      text-decoration: none;
-      padding: em(8px) em(78px);
-      @include mq(medium) {
-        padding: em(15px);
-      }
-
-      &:hover {
-        background-color: $turquoise;
-        border-radius: $br-default;
-        color: $white;
-      }
+    @include mq(large) {
+      margin-right: em(60px);
     }
   }
-
   @include mq(medium) {
-    @include flexify($just: space-between);
-    padding-top: em(20px);
-  }
-}
-
-.grid__row:first-child {
-  @include mq(medium) {
-  @include flexify($just: space-between);
-  margin-top: em(20px);
+    @include flexify($dir: row);
   }
 }

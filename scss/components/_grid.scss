@@ -1,48 +1,33 @@
-// Grid
+// =========================
+//        GRID
+// =========================
 
 .container {
-  margin-left: em(50px);
-  margin-right: em(50px);
+  @include flexify($dir: column, $just: center);
+  width: 85%;
+  margin: 0 auto;
 }
 
 .grid {
-
   @include e(row) {
-    margin: em(30px) 0;
+    @include flexify($dir: column, $just: center);
+    margin: em(30px) 0px;
     @include mq(medium) {
-      @include flexify($just: space-between);
-      max-width: 90%;
+      @include flexify($dir: row, $just:space-between);
 
-      &:nth-child(3) {
-        @include flexify($just: space-between);
-      }
-
-      &:nth-child(4) {
-        @include flexify($just: space-around, $wrap: nowrap);
-      }
     }
   }
-
   @include e(col) {
+    margin-bottom: em(50px);
     @include grid-style;
-    @include mq(small) {
-      &--12.theme__colors,
-      &--8.theme__colors,
-      &--7.theme__colors,
-      &--6.theme__colors,
-      &--5.theme__colors,
-      &--4.theme__colors,
-      &--3.theme__colors {
-        font-family: $font-family--primary;
-        color: $grey;
-        font-size: em(18px);
-        padding: 10px;
-        font-weight: $font-weight--medium;
+      @include mq(medium) {
+        @include g-columns;
       }
     }
+}
 
-    @include mq(large)  {
-      @include g-columns;
-    }
-  }
+[class^="grid__col--"]{
+  float: left;
+  justify-content: center;
+  margin-bottom: em(20px);
 }
